@@ -84,6 +84,7 @@ module LanguagePack
     # @option options [Error] :error_class Class of error to raise, defaults to Standard Error
     # @option options [Integer] :max_attempts Number of times to attempt command before raising
     def run!(command, options = {})
+      $stdout.puts "Running '#{command}'"
       max_attempts = options[:max_attempts] || 1
       error_class = options[:error_class] || StandardError
       max_attempts.times do |attempt_number|
